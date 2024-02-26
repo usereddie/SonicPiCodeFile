@@ -1,0 +1,16 @@
+use_bpm 160
+use_synth :saw
+
+live_loop :heartbeat do
+  sample :drum_heavy_kick, amp: 1.5
+  sleep 0.5
+  sample :drum_heavy_kick, amp: 1.5
+  sleep 3.5
+end
+
+sleep 8
+
+live_loop :layer2 do
+  sample :loop_breakbeat, beat_stretch: 8, amp: 1.75, rate: 1
+  sleep 2
+end
