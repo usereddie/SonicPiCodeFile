@@ -1,0 +1,318 @@
+#youtube links:
+#https://www.youtube.com/watch?v=BK0fNRkVd1Y&t=8s
+#https://www.youtube.com/watch?v=-4NuUANcOcU
+#https://www.youtube.com/watch?v=siolqNwh-80
+
+use_bpm 136
+use_synth :piano
+
+canweswitchthelanguage = "C:/Users/eduardo_gomez/Documents/Audacity/Can We Switch The Language.wav"
+define :purple_notes do
+  play:E4
+  sleep 1
+  play:E5
+  play:Gs4
+  sleep 2
+  play:E5
+  play:Gs4
+  sleep 1
+end
+
+define :yellow_notes do
+  play :r
+  sleep 1
+  play:E5
+  play:Gs4
+  play:B4
+  sleep 1
+  play:B4
+  sleep 1
+  play:E5
+  play:Gs4
+  sleep 1
+end
+
+define :blue_notes do
+  play:B4
+  sleep 0.75
+  play:As4
+  sleep 0.25
+  play:Gs4
+  play:B4
+  sleep 0.75
+  play:Cs5
+  sleep 0.25
+  play:B4
+  sleep 1
+  play:Gs4
+  play:E5
+  sleep 1
+end
+
+live_loop:background_notes do
+  play:E3, amp: 0.25
+  sleep 1
+  play:B3, amp: 0.25
+  play:E4, amp: 0.25
+  sleep 1
+  play:B3, amp: 0.25
+  sleep 1
+  play:E4, amp: 0.25
+  sleep 1
+
+  play:E3, amp: 0.5
+  sleep 1
+  play:B3, amp: 0.5
+  play:E4, amp: 0.5
+  sleep 1
+  play:B3, amp: 0.5
+  sleep 1
+  play:E4, amp: 0.5
+  sleep 1
+
+  play:E3, amp: 0.75
+  sleep 1
+  play:B3, amp: 0.75
+  play:E4, amp: 0.75
+  sleep 1
+  play:B3, amp: 0.75
+  sleep 1
+  play:E4, amp: 0.75
+  sleep 1
+
+  sleep 1
+
+  5.times do
+    play:E3, amp: 1
+    sleep 1
+    play:B3, amp: 1
+    play:E4, amp: 1
+    sleep 1
+    play:B3, amp: 1
+    sleep 1
+    play:E4, amp: 1
+    sleep 1
+  end
+  stop
+end
+
+# Measure 1
+
+# Measure 2
+purple_notes
+
+# Measure 3
+yellow_notes
+
+# Measure 4
+yellow_notes
+
+# Measure 5
+blue_notes
+
+# Measure 6
+yellow_notes
+
+# Measure 7
+blue_notes
+
+# Measure 8
+purple_notes
+
+sample :vinyl_rewind
+sleep 4
+sample canweswitchthelanguage, amp: 2
+sleep 4
+
+use_bpm 180
+use_synth :chipbass
+
+define :part1 do
+  play :c4
+  sleep 1.5
+  play :g3
+  sleep 1.5
+  play :e3
+  sleep 1.5
+  play :a3
+  sleep 1
+  play :b3
+  sleep 1
+  play :bb3
+  sleep 0.5
+  play :a3
+  sleep 1
+end
+
+define :part2 do
+  play :g3
+  sleep 2/3.0 #0.666666...
+  play :e4
+  sleep 2/3.0 #0.666666...
+  play :g4
+  sleep 2/3.0 #0.666666...
+  play :a4
+  sleep 1
+  play :f4
+  sleep 0.5
+  play :g4
+  sleep 1
+  play :e4
+  sleep 1
+  play :c4
+  sleep 0.5
+  play :d4
+  sleep 0.5
+  play :b3
+  sleep 1
+end
+
+# VARIABLES TO STORE SAMPLES
+coin = "C:/Users/eduardo_gomez/Downloads/mario_sounds/mario_sounds/coin.wav"
+its_a_me_mario = "C:/Users/eduardo_gomez/Downloads/mario_sounds/mario_sounds/mario_intro.wav"
+mushroom ="C:/Users/eduardo_gomez/Downloads/mario_sounds/mario_sounds/mushroom.wav"
+jump ="C:/Users/eduardo_gomez/Downloads/mario_sounds/mario_sounds/jump.wav"
+oneup ="C:/Users/eduardo_gomez/Downloads/mario_sounds/mario_sounds/oneup.wav"
+pipe = "C:/Users/eduardo_gomez/Downloads/mario_sounds/mario_sounds/pipe.wav"
+ronaldo = "C:/Users/eduardo_gomez/Documents/Audacity/ronaldoaudio.wav"
+
+sample its_a_me_mario
+sleep 10
+
+# INTRO
+play :e4
+sleep 0.5
+play :e4
+sleep 1
+play :e4
+sleep 1
+play :c4
+sleep 0.5
+play :e4
+sleep 1
+play :g4
+sleep 2
+play :g3
+sleep 2
+
+
+# PART ONE
+sample jump
+sample coin
+sample pipe
+part1
+
+
+sample jump
+sample coin
+sample pipe
+part1
+
+sample jump
+sample coin
+sample pipe
+part1
+
+sample jump
+sample coin
+sample pipe
+part1
+
+#PART TWO
+part2
+
+
+sample mushroom
+sleep 4
+sample ronaldo, amp: 2
+sleep 32
+
+use_bpm 160
+use_synth :saw
+
+kanye = "C:/Users/eduardo_gomez/Documents/Audacity/carnival_sample.wav"
+
+#this is just for the stranger_notes to keep playing
+define :stranger_notes do
+  play :c2
+  sleep 0.5
+  play :e2
+  sleep 0.5
+  play :g2
+  sleep 0.5
+  play :b2
+  sleep 0.5
+  
+  play :c3
+  sleep 0.5
+  play :b2
+  sleep 0.5
+  play :g2
+  sleep 0.5
+  play :e2
+  sleep 0.5
+end
+
+live_loop :heartbeat do
+  16.times do
+    sample :drum_heavy_kick, amp: 1.25
+    sleep 0.5
+    sample :drum_heavy_kick, amp: 1.25
+    sleep 3.5
+  end
+  stop
+end
+
+sleep 8
+
+live_loop :myownsound do
+  7.times do
+    sample :glitch_bass_g, beat_stretch: 8, amp: 1.5, rate: 1
+    sleep 8
+  end
+  stop
+end
+
+sleep 8
+
+live_loop :layer3 do
+  12.times do
+    sample :elec_cymbal, amp: 0.5, rate: 1
+    sleep 0.5
+    sample :elec_cymbal, amp: 0.5, rate: 1
+    sleep 3.5
+  end
+  stop
+end
+
+sleep 16
+
+with_fx :vowel do
+  stranger_notes
+end
+with_fx :vowel do
+  stranger_notes
+end
+
+with_fx :hpf do
+  stranger_notes
+end
+with_fx :hpf do
+  stranger_notes
+end
+
+with_fx :wobble do
+  stranger_notes
+end
+with_fx :wobble do
+  stranger_notes
+end
+
+with_fx :slicer do
+  stranger_notes
+end
+with_fx :slicer do
+  stranger_notes
+end
+
+sample kanye
