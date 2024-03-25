@@ -1,0 +1,130 @@
+#youtube links:
+#https://www.youtube.com/watch?v=79XCNh-Rcs8
+
+#=begin
+el_alfa = "C:/Users/eduardo_gomez/Downloads/4Kaudio [vocals].mp3"
+firstbell = "C:/Users/eduardo_gomez/Documents/Audacity/audio [music] bell.wav"
+bell = "C:/Users/eduardo_gomez/Documents/Audacity/audio [music] new bell.wav"
+clap = "C:/Users/eduardo_gomez/Documents/Audacity/audio [clap].wav"
+snare = "C:/Users/eduardo_gomez/Documents/Audacity/audio [softdrumsnare].wav"
+
+
+
+=begin
+sample el_alfa, amp: 2.5
+=end
+
+part1 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals] part1.wav"
+part2 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part2.wav"
+part3 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part3.wav"
+part4 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part4.wav"
+part5 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part5.wav"
+part6 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part6.wav"
+part7 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part7.wav"
+part8 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part8.wav"
+part9 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part9.wav"
+part10 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part10.wav"
+part11 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part11.wav"
+part12 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part12.wav"
+part13 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part13.wav"
+part14 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part14.wav"
+part15 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part15.wav"
+
+
+elalfa = [ part1, part2, part3, part4, part5, part6, part7, part8, part9, part10, part11, part12, part13, part14, part15]
+i = 0
+
+live_loop :vocals do
+  15.times do
+    sample elalfa[i], amp: 2.5
+    sleep(4)
+    i = i + 1
+  end
+  stop
+end
+
+#=begin
+live_loop :melody do
+  15.times do
+    sample bell, amp: 2.5
+    sleep 4
+  end
+  stop
+end
+#=end
+
+sleep 12
+
+live_loop :clap do
+  6.times do
+    sample clap, amp: 3.5 #clap
+    sleep 4
+  end
+  stop
+end
+
+#=begin
+live_loop :drumkick do
+  16.times do
+    sample :drum_bass_soft, amp: 2 #heavy drum kick
+    sleep 0.5
+    sample :drum_bass_soft, amp: 2 #heavy drum kick
+    sleep 0.5
+  end
+  stop
+end
+
+#=begin
+live_loop :bass do
+  6.times do
+    sample :drum_bass_hard, amp: 2 #bass
+    sleep 2
+    sample :drum_bass_hard, amp: 2 #bass
+    sleep 2.020
+  end
+  stop
+end
+#=end
+
+sleep 16
+
+live_loop :softdrumsnare do
+  2.times do
+    sample snare, amp: 2 #snare
+    sleep 4
+  end
+  stop
+end
+
+sleep 16
+
+live_loop :clap do
+  4.times do
+    sample clap, amp: 3.5 #clap
+    sleep 4
+  end
+  stop
+end
+
+#=begin
+live_loop :drumkick do
+  12.times do
+    sample :drum_bass_soft, amp: 2 #heavy drum kick
+    sleep 0.5
+    sample :drum_bass_soft, amp: 2 #heavy drum kick
+    sleep 0.5
+  end
+  stop
+end
+
+#=begin
+live_loop :bass do
+  4.times do
+    sample :drum_bass_hard, amp: 2 #bass
+    sleep 2
+    sample :drum_bass_hard, amp: 2 #bass
+    sleep 2.020
+  end
+  stop
+end
+#=end
