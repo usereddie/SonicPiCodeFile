@@ -1,0 +1,80 @@
+#youtubelinks:
+#https://www.youtube.com/watch?v=uWdHM3-2cpU
+
+trancedrums = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testdrumsuno.wav"
+trancemelody = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelody.wav"
+trancebass = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testbass.wav"
+part1 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart1].wav"
+part2 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart2].wav"
+part3 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart3].wav"
+part4 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart4].wav"
+part5 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart5].wav"
+part6 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart6].wav"
+part7 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart7].wav"
+part8 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart8].wav"
+part9 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart9].wav"
+part10 ="/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart10].wav"
+
+
+#=begin
+live_loop :drums do
+  7.times do
+    sample trancedrums, amp: 3
+    sleep 8
+  end
+  stop
+end
+#=end
+
+sleep 8
+
+#partzero =
+partone = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelodypart1.wav"
+parttwo = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelodypart2.wav"
+partthree = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelodypart3.wav"
+partfour = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelodypart4.wav"
+
+=begin
+trancemelody = [partone, partone, parttwo, partthree, partfour]
+i = 0
+
+
+live_loop :melody do
+  5.times do
+    sample trancemelody[i], amp: 2.5
+    sleep(16)
+    i = i + 1
+  end
+  stop
+end
+=end
+
+sleep 8
+
+#=begin
+live_loop :bass do
+  5.times do
+    sample trancebass, amp: 3
+    sleep 8
+  end
+  stop
+end
+
+#=end
+#=begin
+sleep 8
+
+
+travis = [part1, part2, part3, part4, part5, part6, part7, part8, part9, part10]
+i = 0
+
+
+live_loop :vocals do
+  10.times do
+    sample travis[i], amp: 2.5
+    sleep(6)
+    i = i + 1
+  end
+  stop
+end
+#=end
