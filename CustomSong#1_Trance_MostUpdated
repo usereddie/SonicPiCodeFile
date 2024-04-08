@@ -1,8 +1,10 @@
 #youtubelinks:
 #https://www.youtube.com/watch?v=uWdHM3-2cpU
+#https://www.youtube.com/watch?v=tTUEM9KdxfQ
 
+
+benimaru = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/BenimaruSample.wav"
 trancedrums = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testdrumsuno.wav"
-trancemelody = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelody.wav"
 trancebass = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testbass.wav"
 part1 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart1].wav"
 part2 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart2].wav"
@@ -14,6 +16,11 @@ part7 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart7].
 part8 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart8].wav"
 part9 = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart9].wav"
 part10 ="/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance [vocalspart10].wav"
+longmelodysample = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/long_melody_sample.wav"
+tiktok = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/4Kreplacement(tiktok).wav"
+cuatrosamp = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/4Ksampduringronny.wav"
+#you dont need this one --> fourK = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/4Ktestathome.mp3"
+
 
 
 #=begin
@@ -28,26 +35,7 @@ end
 
 sleep 8
 
-#partzero =
-partone = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelodypart1.wav"
-parttwo = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelodypart2.wav"
-partthree = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelodypart3.wav"
-partfour = "/Users/mariagomez/Desktop/Eddie's Sonic Pi Folder/Trance_testmelodypart4.wav"
-
-=begin
-trancemelody = [partone, partone, parttwo, partthree, partfour]
-i = 0
-
-
-live_loop :melody do
-  5.times do
-    sample trancemelody[i], amp: 2.5
-    sleep(16)
-    i = i + 1
-  end
-  stop
-end
-=end
+sample longmelodysample
 
 sleep 8
 
@@ -68,7 +56,7 @@ sleep 8
 travis = [part1, part2, part3, part4, part5, part6, part7, part8, part9, part10]
 i = 0
 
-
+#=begin
 live_loop :vocals do
   10.times do
     sample travis[i], amp: 2.5
@@ -78,3 +66,35 @@ live_loop :vocals do
   stop
 end
 #=end
+
+sleep 60
+
+sample benimaru
+
+sleep 6
+
+sample tiktok, amp: 2
+
+sleep 16
+
+sample :vinyl_rewind
+
+#after this use ronaldo sample from school to transition into the actual 4K
+#put sample here -->
+
+#sleep here for however long the ronaldo sample is going to be
+
+sleep 2
+
+live_loop :cheeky4k do
+  7.times do
+    sample cuatrosamp, amp: 2.5
+    sleep 2
+  end
+  stop
+end
+
+sleep 14
+
+#for this just put your intro to the 2nd song
+sample fourK, amp: 2.5
