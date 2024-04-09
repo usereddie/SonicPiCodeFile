@@ -21,6 +21,8 @@ part13 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part13.wav"
 part14 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part14.wav"
 part15 = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio [vocals]part15.wav"
 outro = "C:/Users/eduardo_gomez/Documents/Audacity/4Kaudio(outro).wav"
+ronnyending1 = "C:/Users/eduardo_gomez/Desktop/Cristiano Ronaldo maybe someone don’t like me because I’m too good.mp3"
+ronnyending2 = "C:/Users/eduardo_gomez/Desktop/Cristiano Ronaldo Inshallah Siuuu.mp3"
 
 
 define :function do|s| #used for sleep times
@@ -120,3 +122,11 @@ end
 function 16
 
 sample outro, amp: 2
+
+function 16
+
+sample ronnyending1, amp: 3, release: 2
+
+function 5.5
+
+sample ronnyending2, amp: 3, release: 2
